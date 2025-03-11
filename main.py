@@ -21,7 +21,7 @@ data.sort_index(inplace=True)
 data['MA_50'] = data['close'].rolling(window=50).mean()
 data['MA_200'] = data['close'].rolling(window=200).mean()
 data['RSI'] = 100 - (100 / (1 + (data['close'].diff(1).clip(lower=0).rolling(window=14).mean() / 
-                     -data['close'].diff(1).clip(upper=0).rolling(window=14).mean()))
+                     -data['close'].diff(1).clip(upper=0).rolling(window=14).mean())))
 
 # Función de toma de decisiones basada en FOL
 def tomar_decision(data):
